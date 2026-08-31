@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: './', // Ensures GitHub Pages deployment compatibility on any subpath
+  base: '/Portfolio-/', // Exact GitHub Pages base path for repo manassety/Portfolio-
   build: {
     outDir: 'dist',
     sourcemap: false,
