@@ -15,7 +15,7 @@ export default function Footer({ onOpenEnquiry }) {
           <div className="lg:col-span-2 space-y-4">
             <a href="#home" className="flex items-center space-x-3 group">
               <img
-                src="./images/gallery/Logo/LoGoS.png"
+                src="./images/gallery/logo/logos.png"
                 alt="SETY VIDEOS AND MIXING LAB Logo"
                 className="h-12 w-auto object-contain filter drop-shadow-md group-hover:scale-105 transition-transform duration-300"
                 onError={(e) => {

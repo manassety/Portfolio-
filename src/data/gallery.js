@@ -24,7 +24,7 @@ export const galleryItems = [
     categoryLabel: "Weddings",
     location: "Sety Studio Archive",
     aspect: "landscape",
-    image: "./images/gallery/wedding photo/DSC_6225.JPG.jpeg",
+    image: "./images/gallery/wedding-photo/DSC_6225.JPG.jpeg",
     caption: "Breathtaking royal wedding portrait featuring rich maroon velvet embroidered attire and traditional jewelry."
   },
   {
@@ -34,7 +34,7 @@ export const galleryItems = [
     categoryLabel: "Weddings",
     location: "Sety Studio Archive",
     aspect: "portrait",
-    image: "./images/gallery/wedding photo/DSC08475.JPG.jpeg",
+    image: "./images/gallery/wedding-photo/DSC08475.JPG.jpeg",
     caption: "Exquisite red lehenga bridal portrait capturing intricate matha patti, nath, and royal bridal jewelry."
   },
   {
@@ -44,7 +44,7 @@ export const galleryItems = [
     categoryLabel: "Weddings",
     location: "Sety Studio Archive",
     aspect: "landscape",
-    image: "./images/gallery/wedding photo/DSC08506.JPG.jpeg",
+    image: "./images/gallery/wedding-photo/DSC08506.JPG.jpeg",
     caption: "Elegant studio portrait highlighting detailed polki necklace, green emerald accents, and traditional veil."
   },
   {
@@ -54,7 +54,7 @@ export const galleryItems = [
     categoryLabel: "Weddings",
     location: "Sety Studio Archive",
     aspect: "landscape",
-    image: "./images/gallery/wedding photo/DSC08911.JPG.jpeg",
+    image: "./images/gallery/wedding-photo/DSC08911.JPG.jpeg",
     caption: "High-definition stage lighting capture preserving sacred wedding rituals and family blessings."
   },
 
@@ -66,7 +66,7 @@ export const galleryItems = [
     categoryLabel: "Candid",
     location: "Sety Studio Archive",
     aspect: "landscape",
-    image: "./images/gallery/candid photo/DSC_6300.JPG.jpeg",
+    image: "./images/gallery/candid-photo/DSC_6300.JPG.jpeg",
     caption: "Subtle candid moment showcasing natural warmth, emotion, and unscripted bridal joy."
   },
   {
@@ -76,7 +76,7 @@ export const galleryItems = [
     categoryLabel: "Candid",
     location: "Sety Studio Archive",
     aspect: "portrait",
-    image: "./images/gallery/candid photo/DSC08472.JPG.jpeg",
+    image: "./images/gallery/candid-photo/DSC08472.JPG.jpeg",
     caption: "Vibrant candid portrait capturing red chunri drapery and glowing smile."
   },
   {
@@ -86,7 +86,7 @@ export const galleryItems = [
     categoryLabel: "Candid",
     location: "Sety Studio Archive",
     aspect: "landscape",
-    image: "./images/gallery/candid photo/DSC08510.JPG.jpeg",
+    image: "./images/gallery/candid-photo/DSC08510.JPG.jpeg",
     caption: "Unscripted expressions of joy captured during pre-wedding celebrations."
   },
   {
@@ -96,7 +96,7 @@ export const galleryItems = [
     categoryLabel: "Candid",
     location: "Sety Studio Archive",
     aspect: "landscape",
-    image: "./images/gallery/candid photo/DSC08522.JPG.jpeg",
+    image: "./images/gallery/candid-photo/DSC08522.JPG.jpeg",
     caption: "High-speed lens capture freezing dynamic dance moments on the celebration stage."
   },
   {
@@ -106,7 +106,7 @@ export const galleryItems = [
     categoryLabel: "Candid",
     location: "Sety Studio Archive",
     aspect: "landscape",
-    image: "./images/gallery/candid photo/DSC08665.JPG.jpeg",
+    image: "./images/gallery/candid-photo/DSC08665.JPG.jpeg",
     caption: "Heartfelt candid moments during traditional family ceremonies."
   },
 
@@ -118,7 +118,7 @@ export const galleryItems = [
     categoryLabel: "Cinematic Stills",
     location: "Sety Studio Archive",
     aspect: "portrait",
-    image: "./images/gallery/B&W.jpeg",
+    image: "./images/gallery/bw-portrait.jpeg",
     caption: "Atmospheric black-and-white studio portrait with delicate peacock feather lighting."
   },
   {
@@ -128,7 +128,7 @@ export const galleryItems = [
     categoryLabel: "Traditional",
     location: "Sety Studio Archive",
     aspect: "landscape",
-    image: "./images/gallery/wedding photo/DSC08911.JPG.jpeg",
+    image: "./images/gallery/wedding-photo/DSC08911.JPG.jpeg",
     caption: "Full stage traditional photography ensuring family and elder blessings are preserved."
   },
 
@@ -140,7 +140,7 @@ export const galleryItems = [
     categoryLabel: "Albums & Frames",
     location: "Mixing Lab Studio",
     aspect: "wide",
-    image: "./images/gallery/photo album/2c48ae672f49400795336ab8c6ef7fca.jpg",
+    image: "./images/gallery/photo-album/2c48ae672f49400795336ab8c6ef7fca.jpg",
     caption: "Luxury 14x40 velvet-lined album with matching protective briefcase box."
   },
   {
@@ -150,7 +150,7 @@ export const galleryItems = [
     categoryLabel: "Albums & Frames",
     location: "Mixing Lab Studio",
     aspect: "wide",
-    image: "./images/gallery/photo album/998d1c77abda4b769e15e00f135a349a.jpg",
+    image: "./images/gallery/photo-album/998d1c77abda4b769e15e00f135a349a.jpg",
     caption: "Non-tearable metallic print album spreads with 3D embossed monogramming."
   },
   {
@@ -160,7 +160,7 @@ export const galleryItems = [
     categoryLabel: "Albums & Frames",
     location: "Mixing Lab Studio",
     aspect: "landscape",
-    image: "./images/gallery/photo album/f4b7cdcc1caa4906a8bd72669a08a0cb.jpg",
+    image: "./images/gallery/photo-album/f4b7cdcc1caa4906a8bd72669a08a0cb.jpg",
     caption: "Custom page layout transitions with protective UV coating."
   },
   {
@@ -170,7 +170,7 @@ export const galleryItems = [
     categoryLabel: "Albums & Frames",
     location: "Mixing Lab Studio",
     aspect: "landscape",
-    image: "./images/gallery/photo album/f53be576a2184bbb87b738db61548043.jpg",
+    image: "./images/gallery/photo-album/f53be576a2184bbb87b738db61548043.jpg",
     caption: "Matching acrylic wall portrait frames (12x18 & 16x24) included with royal packages."
   },
 
@@ -182,7 +182,7 @@ export const galleryItems = [
     categoryLabel: "Drone Aerial",
     location: "Sety Studio Archive",
     aspect: "landscape",
-    image: "./images/gallery/drone-01.jpg",
+    image: "./images/hero.jpg",
     caption: "4K aerial panoramic view of luxury wedding mandap and venue grounds."
   }
 ];

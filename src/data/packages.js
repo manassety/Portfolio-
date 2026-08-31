@@ -30,7 +30,7 @@ export const packagesData = [
       "1 Photo Frame (12 x 18)",
       "All Original Data in Google Drive"
     ],
-    coverImage: "./images/gallery/wedding photo/DSC08475.JPG.jpeg"
+    coverImage: "./images/gallery/wedding-photo/DSC08475.JPG.jpeg"
   },
   {
     id: 2,
@@ -58,7 +58,7 @@ export const packagesData = [
       "Drone Shoot & Aerial Footage",
       "All Raw Data in Google Drive"
     ],
-    coverImage: "./images/gallery/candid photo/DSC_6300.JPG.jpeg"
+    coverImage: "./images/gallery/candid-photo/DSC_6300.JPG.jpeg"
   },
   {
     id: 3,
@@ -86,7 +86,7 @@ export const packagesData = [
       "Custom Protective Box",
       "All Raw Data in Google Drive"
     ],
-    coverImage: "./images/gallery/wedding photo/DSC_6225.JPG.jpeg"
+    coverImage: "./images/gallery/wedding-photo/DSC_6225.JPG.jpeg"
   },
   {
     id: 4,
@@ -114,7 +114,7 @@ export const packagesData = [
       "Full Raw Data Backup"
     ],
     note: "Specific pricing varies based on event duration and custom requirements. Contact us for an exact quote.",
-    coverImage: "./images/gallery/wedding photo/DSC08506.JPG.jpeg"
+    coverImage: "./images/gallery/wedding-photo/DSC08506.JPG.jpeg"
   },
   {
     id: 5,
@@ -146,7 +146,7 @@ export const packagesData = [
       "2 Large Wall Portraits (16 x 24)",
       "All High-Res Raw Data in Google Drive"
     ],
-    coverImage: "./images/gallery/candid photo/DSC08665.JPG.jpeg"
+    coverImage: "./images/gallery/candid-photo/DSC08665.JPG.jpeg"
   },
   {
     id: 6,
@@ -175,7 +175,7 @@ export const packagesData = [
       "Premium Photo Frames Selection",
       "All Original Data in Google Drive"
     ],
-    coverImage: "./images/gallery/wedding photo/DSC08911.JPG.jpeg"
+    coverImage: "./images/gallery/wedding-photo/DSC08911.JPG.jpeg"
   },
   {
     id: 7,
@@ -203,7 +203,7 @@ export const packagesData = [
       "Cinematic Teaser Trailer",
       "Customized Bride or Groom Centric Coverage"
     ],
-    coverImage: "./images/gallery/photo album/2c48ae672f49400795336ab8c6ef7fca.jpg"
+    coverImage: "./images/gallery/photo-album/2c48ae672f49400795336ab8c6ef7fca.jpg"
   }
 ];
 

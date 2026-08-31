@@ -64,7 +64,7 @@ export default function Hero({ onOpenEnquiry }) {
         <div ref={businessRef} className="flex flex-col items-center mb-6">
           {/* Studio Brand Logo */}
           <img
-            src="./images/gallery/Logo/LoGoS.png"
+            src="./images/gallery/logo/logos.png"
             alt="SETY VIDEOS AND MIXING LAB Logo"
             className="h-20 sm:h-28 w-auto object-contain filter drop-shadow-[0_10px_25px_rgba(201,169,110,0.3)] mb-4 animate-fade-in"
             onError={(e) => {

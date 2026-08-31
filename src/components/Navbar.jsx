@@ -54,7 +54,7 @@ export default function Navbar({ onOpenEnquiry }) {
             className="flex items-center space-x-3 group cursor-pointer"
           >
             <img
-              src="./images/gallery/Logo/LoGoS.png"
+              src="./images/gallery/logo/logos.png"
               alt="SETY VIDEOS AND MIXING LAB Logo"
               className="h-10 sm:h-12 w-auto object-contain filter drop-shadow-md group-hover:scale-105 transition-transform duration-300"
               onError={(e) => {
