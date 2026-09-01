@@ -1,37 +1,818 @@
 <!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>SETY VIDEOS AND MIXING LAB | Premium Photography & Videography</title>
+  <meta name="description" content="SETY VIDEOS AND MIXING LAB — Professional wedding photography, traditional videography, cinematic films, candid moments, drone coverage, teasers & luxury albums.">
+  <meta name="keywords" content="photography, videography, wedding films, candid photography, drone shoots, wedding albums, Sety Videos, Sety Mixing Lab, Pithoragarh">
+  <meta name="author" content="SETY VIDEOS AND MIXING LAB">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SETY VIDEOS AND MIXING LAB | Premium Photography & Videography">
+  <meta property="og:description" content="Capturing moments, creating memories. Professional wedding photography, cinematic films, candid shots & complete event coverage.">
+  <meta property="og:image" content="images/hero.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS System -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- GSAP CDN Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       NAVBAR
+       ========================================================================== -->
+  <header id="main-navbar" class="navbar">
+    <div class="container navbar-container">
+      <a href="#home" class="brand-logo">
+        <img src="images/gallery/logo/logos.png" alt="SETY VIDEOS AND MIXING LAB Logo" onError="this.style.display='none'">
+        <div class="brand-text">
+          <span class="brand-title">SETY</span>
+          <span class="brand-subtitle">VIDEOS & MIXING LAB</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="nav-links">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#portfolio" class="nav-link">Portfolio</a>
+        <a href="#packages" class="nav-link">Packages</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Right Action Call Button -->
+      <div class="nav-right-btn">
+        <a href="tel:+919412478853" class="btn-nav-call">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Call Studio</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button id="mobile-toggle-btn" class="mobile-toggle" aria-label="Toggle Mobile Navigation">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-drawer" class="mobile-menu-drawer">
+    <div class="mobile-nav-links">
+      <span style="font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--gold); font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">Navigation Menu</span>
+      <a href="#home" class="mobile-nav-link"><span>Home</span><span class="num">01</span></a>
+      <a href="#services" class="mobile-nav-link"><span>Services</span><span class="num">02</span></a>
+      <a href="#portfolio" class="mobile-nav-link"><span>Portfolio</span><span class="num">03</span></a>
+      <a href="#packages" class="mobile-nav-link"><span>Packages</span><span class="num">04</span></a>
+      <a href="#contact" class="mobile-nav-link"><span>Contact</span><span class="num">05</span></a>
+    </div>
+
+    <div class="mobile-menu-bottom">
+      <a href="tel:+919412478853" class="btn-mobile-call">
+        Call Studio +91 94124 78853
+      </a>
+      <a href="https://wa.me/919412478853" target="_blank" style="color: var(--text-muted-light); font-size: 0.75rem; text-align: center;">
+        Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       HERO SECTION (DARK CINEMATIC)
+       ========================================================================== -->
+  <section id="home" class="hero">
+    <div class="hero-bg-container">
+      <img src="images/hero.jpg" alt="SETY VIDEOS AND MIXING LAB Wedding Background" class="hero-bg-img" onError="this.style.display='none'">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container hero-content">
+      <img src="images/gallery/logo/logos.png" alt="SETY VIDEOS AND MIXING LAB Logo" class="hero-logo" onError="this.style.display='none'">
+      
+      <div class="hero-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.28 1.28L3 12l5.8 1.9a2 2 0 0 1 1.28 1.28L12 21l1.9-5.8a2 2 0 0 1 1.28-1.28L21 12l-5.8-1.9a2 2 0 0 1-1.28-1.28z"/></svg>
+        <span>CAPTURING MOMENTS • CREATING MEMORIES</span>
+      </div>
+
+      <p class="hero-brand-name">SETY VIDEOS AND MIXING LAB</p>
+
+      <h1 class="hero-heading">
+        Every Moment Deserves<br>
+        <span class="gold-gradient-text">To Be Remembered.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Traditional Photography • Cinematic Films • Candid Moments • Drone Coverage
+      </p>
+
+      <div class="hero-actions">
+        <a href="#portfolio" class="btn-gold">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 8 6 4-6 4Z"/></svg>
+          <span>VIEW PORTFOLIO</span>
+        </a>
+        <a href="#packages" class="btn-outline-light">
+          <span>VIEW PACKAGES</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" onclick="document.querySelector('#services').scrollIntoView({behavior:'smooth'})">
+      <span>EXPLORE STUDIO</span>
+      <div class="scroll-mouse">
+        <div class="scroll-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 2 — SERVICES (WARM IVORY)
+       ========================================================================== -->
+  <section id="services" class="services-section">
+    <div class="container" style="text-align: center;">
+      <div data-reveal class="section-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        <span>OUR STUDIO EXPERTISE</span>
+      </div>
+
+      <h2 data-reveal class="section-title">WE TURN MOMENTS INTO MEMORIES</h2>
+
+      <p data-reveal class="section-subtitle" style="color: var(--text-muted-dark);">
+        At <strong style="color: var(--text-dark);">SETY VIDEOS AND MIXING LAB</strong>, we specialize in high-end wedding cinematography, traditional photography, and state-of-the-art post-production mixing. Every frame is crafted with artistic precision to celebrate your unique love story.
+      </p>
+
+      <!-- 10 Services Grid -->
+      <div class="services-grid">
+        <!-- 01 -->
+        <div data-reveal class="service-card">
+          <div>
+            <div class="service-card-top">
+              <span class="service-num">SERVICE 01</span>
+              <span class="service-tag">TRADITIONAL</span>
+            </div>
+            <div class="service-header">
+              <div class="service-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="5" rx="2"/><polygon points="23 7 17 12 23 17 23 7"/></svg>
+              </div>
+              <div>
+                <h3 class="service-title">Traditional Videography</h3>
+                <p class="service-subtitle">Complete Stage & Ceremony Recording</p>
+              </div>
+            </div>
+            <p class="service-desc">High-definition unbroken coverage of every traditional ritual, stage event, and family blessing with pristine multi-angle recording.</p>
+          </div>
+        </div>
+
+        <!-- 02 -->
+        <div data-reveal class="service-card">
+          <div>
+            <div class="service-card-top">
+              <span class="service-num">SERVICE 02</span>
+              <span class="service-tag">TRADITIONAL</span>
+            </div>
+            <div class="service-header">
+              <div class="service-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+              </div>
+              <div>
+                <h3 class="service-title">Traditional Photography</h3>
+                <p class="service-subtitle">Timeless Family & Portrait Frames</p>
+              </div>
+            </div>
+            <p class="service-desc">Clarity-focused photography covering every guest group, family ritual, stage presentation, and traditional ceremony highlight.</p>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div data-reveal class="service-card">
+          <div>
+            <div class="service-card-top">
+              <span class="service-num">SERVICE 03</span>
+              <span class="service-tag">CINEMATIC</span>
+            </div>
+            <div class="service-header">
+              <div class="service-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M3 7.5h4"/><path d="M3 12h18"/><path d="M3 16.5h4"/><path d="M17 3v18"/><path d="M17 7.5h4"/><path d="M17 16.5h4"/></svg>
+              </div>
+              <div>
+                <h3 class="service-title">Cinematic Videography</h3>
+                <p class="service-subtitle">Movie-Style Wedding Storytelling</p>
+              </div>
+            </div>
+            <p class="service-desc">4K cinematic filmmaking with dynamic gimbal stabilization, professional audio capture, color grading, and emotional storytelling.</p>
+          </div>
+        </div>
+
+        <!-- 04 -->
+        <div data-reveal class="service-card">
+          <div>
+            <div class="service-card-top">
+              <span class="service-num">SERVICE 04</span>
+              <span class="service-tag">CANDID</span>
+            </div>
+            <div class="service-header">
+              <div class="service-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.28 1.28L3 12l5.8 1.9a2 2 0 0 1 1.28 1.28L12 21l1.9-5.8a2 2 0 0 1 1.28-1.28L21 12l-5.8-1.9a2 2 0 0 1-1.28-1.28z"/></svg>
+              </div>
+              <div>
+                <h3 class="service-title">Candid Photography</h3>
+                <p class="service-subtitle">Unscripted Emotions & Expressions</p>
+              </div>
+            </div>
+            <p class="service-desc">Subtle, non-intrusive capture of heartfelt laughter, emotional tears, spontaneous smiles, and intimate couple moments.</p>
+          </div>
+        </div>
+
+        <!-- 05 -->
+        <div data-reveal class="service-card">
+          <div>
+            <div class="service-card-top">
+              <span class="service-num">SERVICE 05</span>
+              <span class="service-tag">AERIAL</span>
+            </div>
+            <div class="service-header">
+              <div class="service-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m14.31 8 5.74 9.94"/><path d="M9.69 8h11.48"/><path d="m7.38 12 5.74-9.94"/><path d="M9.69 16 3.95 6.06"/><path d="M14.31 16H2.83"/><path d="m16.62 12-5.74 9.94"/></svg>
+              </div>
+              <div>
+                <h3 class="service-title">Drone Shoot</h3>
+                <p class="service-subtitle">4K Panoramic Grand Vistas</p>
+              </div>
+            </div>
+            <p class="service-desc">Breathtaking top-down aerial shots of venue landscapes, grand baraat processions, outdoor mandaps, and dramatic couple portraits.</p>
+          </div>
+        </div>
+
+        <!-- 06 -->
+        <div data-reveal class="service-card">
+          <div>
+            <div class="service-card-top">
+              <span class="service-num">SERVICE 06</span>
+              <span class="service-tag">SOCIAL</span>
+            </div>
+            <div class="service-header">
+              <div class="service-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+              </div>
+              <div>
+                <h3 class="service-title">Wedding Reels</h3>
+                <p class="service-subtitle">Viral Social Media Clips</p>
+              </div>
+            </div>
+            <p class="service-desc">Fast-paced, stylish vertical reels edited specifically for Instagram, YouTube Shorts, and instant mobile sharing with trending tracks.</p>
+          </div>
+        </div>
+
+        <!-- 07 -->
+        <div data-reveal class="service-card">
+          <div>
+            <div class="service-card-top">
+              <span class="service-num">SERVICE 07</span>
+              <span class="service-tag">TEASER</span>
+            </div>
+            <div class="service-header">
+              <div class="service-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              </div>
+              <div>
+                <h3 class="service-title">Teasers</h3>
+                <p class="service-subtitle">1-3 Minute Highlight Films</p>
+              </div>
+            </div>
+            <p class="service-desc">High-energy, emotional trailer previewing your wedding highlights—perfect for sharing with family before the full video release.</p>
+          </div>
+        </div>
+
+        <!-- 08 -->
+        <div data-reveal class="service-card">
+          <div>
+            <div class="service-card-top">
+              <span class="service-num">SERVICE 08</span>
+              <span class="service-tag">ALBUM</span>
+            </div>
+            <div class="service-header">
+              <div class="service-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6.5 6H20"/></svg>
+              </div>
+              <div>
+                <h3 class="service-title">Premium Albums</h3>
+                <p class="service-subtitle">Handcrafted Italian Leather Books</p>
+              </div>
+            </div>
+            <p class="service-desc">Luxury 12x36 and 14x40 loaded albums with sparkle covers, 3D box cases, emboss finishing, UV coating, and non-tearable paper.</p>
+          </div>
+        </div>
+
+        <!-- 09 -->
+        <div data-reveal class="service-card">
+          <div>
+            <div class="service-card-top">
+              <span class="service-num">SERVICE 09</span>
+              <span class="service-tag">FRAME</span>
+            </div>
+            <div class="service-header">
+              <div class="service-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+              </div>
+              <div>
+                <h3 class="service-title">Photo Frames</h3>
+                <p class="service-subtitle">Elegantly Mounted Wall Portraits</p>
+              </div>
+            </div>
+            <p class="service-desc">High-gloss acrylic, wooden, and metallic wall mounts in 12x18 and 16x24 sizes that preserve your golden memories in high definition.</p>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div data-reveal class="service-card">
+          <div>
+            <div class="service-card-top">
+              <span class="service-num">SERVICE 10</span>
+              <span class="service-tag">FULL SUITE</span>
+            </div>
+            <div class="service-header">
+              <div class="service-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+              </div>
+              <div>
+                <h3 class="service-title">Complete Event Coverage</h3>
+                <p class="service-subtitle">Multi-Day Studio Crew Booking</p>
+              </div>
+            </div>
+            <p class="service-desc">Seamless multi-camera crew deployment from Haldi, Mehendi, Sangeet, and Reception to the final Vidaai sendoff.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3 — PORTFOLIO (LIGHT CREAM)
+       ========================================================================== -->
+  <section id="portfolio" class="portfolio-section">
+    <div class="container" style="text-align: center;">
+      <div data-reveal class="section-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+        <span>EDITORIAL GALLERY</span>
+      </div>
+
+      <h2 data-reveal class="section-title">VISUAL MASTERPIECES</h2>
+
+      <p data-reveal class="section-subtitle" style="color: var(--text-muted-dark);">
+        A curated portfolio of royal wedding stories, candid moments, aerial vistas, and handcrafted memory albums.
+      </p>
+
+      <!-- Category Tabs -->
+      <div data-reveal class="gallery-tabs">
+        <button class="tab-btn active" data-category="ALL">All Works</button>
+        <button class="tab-btn" data-category="WEDDINGS">Weddings</button>
+        <button class="tab-btn" data-category="CANDID">Candid Shots</button>
+        <button class="tab-btn" data-category="CINEMATIC">Cinematic Stills</button>
+        <button class="tab-btn" data-category="TRADITIONAL">Traditional</button>
+        <button class="tab-btn" data-category="ALBUMS">Albums & Frames</button>
+      </div>
+
+      <!-- Masonry Gallery Grid (Populated via script.js) -->
+      <div id="gallery-grid" class="gallery-grid"></div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4 — PACKAGES (WARM IVORY / WHITE CARDS)
+       ========================================================================== -->
+  <section id="packages" class="packages-section">
+    <div class="container" style="text-align: center;">
+      <div data-reveal class="section-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.28 1.28L3 12l5.8 1.9a2 2 0 0 1 1.28 1.28L12 21l1.9-5.8a2 2 0 0 1 1.28-1.28L21 12l-5.8-1.9a2 2 0 0 1-1.28-1.28z"/></svg>
+        <span>TRANSPARENT RATE LIST</span>
+      </div>
+
+      <h2 data-reveal class="section-title">PACKAGES & RATE LIST</h2>
+
+      <p data-reveal class="section-subtitle" style="color: var(--text-muted-dark);">
+        Professional coverage tailored for your special moments. No hidden charges. All packages include raw data delivery via Google Drive.
+      </p>
+
+      <div data-reveal class="pkg-compare-btn-wrap">
+        <button id="open-compare-btn" class="btn-compare">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="4" y1="21" y2="14"/><line x1="4" x2="4" y1="10" y2="3"/><line x1="12" x2="12" y1="21" y2="12"/><line x1="12" x2="12" y1="8" y2="3"/><line x1="20" x2="20" y1="21" y2="16"/><line x1="20" x2="20" y1="12" y2="3"/><line x1="2" x2="6" y1="14" y2="14"/><line x1="10" x2="14" y1="8" y2="8"/><line x1="18" x2="22" y1="16" y2="16"/></svg>
+          <span>Compare All Packages</span>
+        </button>
+      </div>
+
+      <!-- Packages Cards Grid -->
+      <div class="packages-grid">
+        
+        <!-- Package 01 -->
+        <div data-reveal class="pkg-card">
+          <span class="pkg-badge">Classic</span>
+          <div>
+            <div class="pkg-cover">
+              <img src="images/gallery/wedding-photo/DSC08475.JPG.jpeg" alt="Package 01 Cover">
+            </div>
+            <div class="pkg-number">PACKAGE 01</div>
+            <h3 class="pkg-name">Classic Traditional Package</h3>
+            <div class="pkg-price-wrap">
+              <div class="pkg-price">₹30,000</div>
+            </div>
+            <ul class="pkg-features-list">
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Traditional Videography</span></li>
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Traditional Photography</span></li>
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>32 GB Pendrive</span></li>
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Loaded Album (12 x 36)</span></li>
+            </ul>
+            <div class="pkg-expanded-features">
+              <div class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Sparkle Cover Finishing</span></div>
+              <div class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>1 Photo Frame (12 x 18)</span></div>
+              <div class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>All Original Data in Google Drive</span></div>
+            </div>
+          </div>
+          <div class="pkg-actions">
+            <button class="btn-view-details"><span>View Full Details</span> ↓</button>
+            <a href="tel:+919412478853" class="btn-book-pkg">Call Studio to Book</a>
+          </div>
+        </div>
+
+        <!-- Package 02 (Popular) -->
+        <div data-reveal class="pkg-card popular">
+          <span class="pkg-badge">Most Popular</span>
+          <div>
+            <div class="pkg-cover">
+              <img src="images/gallery/wedding-photo/DSC_6225.JPG.jpeg" alt="Package 02 Cover">
+            </div>
+            <div class="pkg-number">PACKAGE 02</div>
+            <h3 class="pkg-name">Standard Aerial Package</h3>
+            <div class="pkg-price-wrap">
+              <div class="pkg-price">₹40,000</div>
+            </div>
+            <ul class="pkg-features-list">
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Traditional Videography & Photography</span></li>
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Drone Aerial Shoot</span></li>
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Loaded Album (14 x 40)</span></li>
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Wedding Reels Clips</span></li>
+            </ul>
+            <div class="pkg-expanded-features">
+              <div class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>3D Box / Premium Box</span></div>
+              <div class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>2 Photo Frames (12 x 18)</span></div>
+              <div class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>32 GB Pendrive</span></div>
+              <div class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>All Raw Data in Google Drive</span></div>
+            </div>
+          </div>
+          <div class="pkg-actions">
+            <button class="btn-view-details"><span>View Full Details</span> ↓</button>
+            <a href="tel:+919412478853" class="btn-book-pkg">Call Studio to Book</a>
+          </div>
+        </div>
+
+        <!-- Package 03 -->
+        <div data-reveal class="pkg-card">
+          <span class="pkg-badge">Cinematic</span>
+          <div>
+            <div class="pkg-cover">
+              <img src="images/gallery/wedding-photo/DSC08506.JPG.jpeg" alt="Package 03 Cover">
+            </div>
+            <div class="pkg-number">PACKAGE 03</div>
+            <h3 class="pkg-name">Cinematic Highlights Package</h3>
+            <div class="pkg-price-wrap">
+              <div class="pkg-price">₹50,000</div>
+            </div>
+            <ul class="pkg-features-list">
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Cinematic Video & Teaser</span></li>
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Traditional Videography & Photography</span></li>
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Loaded Album (14 x 40)</span></li>
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Wedding Reels</span></li>
+            </ul>
+            <div class="pkg-expanded-features">
+              <div class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>3D / Premium Box Case</span></div>
+              <div class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>32 GB Pendrive</span></div>
+              <div class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>All Raw Data in Google Drive</span></div>
+            </div>
+          </div>
+          <div class="pkg-actions">
+            <button class="btn-view-details"><span>View Full Details</span> ↓</button>
+            <a href="tel:+919412478853" class="btn-book-pkg">Call Studio to Book</a>
+          </div>
+        </div>
+
+        <!-- Special Bride / Groom Package -->
+        <div data-reveal class="pkg-card">
+          <span class="pkg-badge">Special Edition</span>
+          <div>
+            <div class="pkg-cover">
+              <img src="images/gallery/photo-album/DSC08573.JPG.jpeg" alt="Special Package Cover">
+            </div>
+            <div class="pkg-number">SPECIAL PACKAGE</div>
+            <h3 class="pkg-name">Special Bride / Groom Package</h3>
+            <div class="pkg-price-wrap">
+              <div class="pkg-price">₹60k – ₹70k</div>
+              <div>
+                <span class="pkg-variant-badge">Bride: ₹60,000</span>
+                <span class="pkg-variant-badge">Groom: ₹70,000</span>
+              </div>
+            </div>
+            <ul class="pkg-features-list">
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Album 14 x 40 with Premium Box</span></li>
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>2 Photo Frames (12 x 18)</span></li>
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Different Custom Page Design</span></li>
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Wedding Reels & Teasers</span></li>
+            </ul>
+          </div>
+          <div class="pkg-actions">
+            <a href="tel:+919412478853" class="btn-book-pkg">Call Studio to Book</a>
+          </div>
+        </div>
+
+        <!-- Package 05 (Deluxe) -->
+        <div data-reveal class="pkg-card">
+          <span class="pkg-badge">Deluxe Suite</span>
+          <div>
+            <div class="pkg-cover">
+              <img src="images/gallery/wedding-photo/DSC08882.JPG.jpeg" alt="Package 05 Cover">
+            </div>
+            <div class="pkg-number">PACKAGE 05</div>
+            <h3 class="pkg-name">Premium Complete Suite</h3>
+            <div class="pkg-price-wrap">
+              <div class="pkg-price">₹80k – ₹90k</div>
+              <div>
+                <span class="pkg-variant-badge">Bride: ₹80,000</span>
+                <span class="pkg-variant-badge">Groom: ₹90,000</span>
+              </div>
+            </div>
+            <ul class="pkg-features-list">
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Cinematic Video & Candid Photography</span></li>
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Drone Shoot & Traditional Coverage</span></li>
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Album 14 x 40 with 3D Box</span></li>
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>2 Photo Frames 12x18 + 2 Photos 16x24</span></li>
+            </ul>
+          </div>
+          <div class="pkg-actions">
+            <a href="tel:+919412478853" class="btn-book-pkg">Call Studio to Book</a>
+          </div>
+        </div>
+
+        <!-- Package 06 (Luxury) -->
+        <div data-reveal class="pkg-card">
+          <span class="pkg-badge">Luxury Gold</span>
+          <div>
+            <div class="pkg-cover">
+              <img src="images/gallery/candid-photo/DSC08842.JPG.jpeg" alt="Package 06 Cover">
+            </div>
+            <div class="pkg-number">PACKAGE 06</div>
+            <h3 class="pkg-name">Royal Multi-Camera Suite</h3>
+            <div class="pkg-price-wrap">
+              <div class="pkg-price">₹1,20,000</div>
+            </div>
+            <ul class="pkg-features-list">
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Multi-Camera Crew Deployment</span></li>
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Cinematic Gimbal & Drone Cinematography</span></li>
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Candid & Traditional Photography</span></li>
+              <li class="pkg-feature-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Luxury Album, 3D Box & Custom Mounts</span></li>
+            </ul>
+          </div>
+          <div class="pkg-actions">
+            <a href="tel:+919412478853" class="btn-book-pkg">Call Studio to Book</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 5 — CONTACT CTA (CINEMATIC DARK)
+       ========================================================================== -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div data-reveal class="contact-card">
+        <div class="section-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.28 1.28L3 12l5.8 1.9a2 2 0 0 1 1.28 1.28L12 21l1.9-5.8a2 2 0 0 1 1.28-1.28L21 12l-5.8-1.9a2 2 0 0 1-1.28-1.28z"/></svg>
+          <span>DIRECT STUDIO CONTACT</span>
+        </div>
+
+        <h2 class="section-title" style="color: var(--text-light);">LET'S CAPTURE YOUR STORY</h2>
+
+        <p style="font-size: 1.1rem; font-weight: 300; color: rgba(236,231,222,0.85); font-style: italic;">
+          "Your moments. Our frames. Memories that last forever."
+        </p>
+
+        <!-- Direct Contact Grid -->
+        <div class="contact-grid">
+          <div class="contact-item-box">
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <span class="contact-label">Call / WhatsApp</span>
+              <a href="tel:+919412478853" class="contact-val">+91 94124 78853</a>
+            </div>
+          </div>
+
+          <div class="contact-item-box">
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </div>
+            <div>
+              <span class="contact-label">Instagram Page</span>
+              <a href="https://www.instagram.com/sety_videos_dinesh_sety/" target="_blank" class="contact-val-link">@sety_videos_dinesh_sety</a>
+            </div>
+          </div>
+
+          <div class="contact-item-box">
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </div>
+            <div>
+              <span class="contact-label">Facebook Page</span>
+              <a href="https://facebook.com/SetyVideos" target="_blank" class="contact-val-link">Sety Videos</a>
+            </div>
+          </div>
+
+          <div class="contact-item-box">
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.56 49.56 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><polygon points="10 15 15 12 10 9 10 15"/></svg>
+            </div>
+            <div>
+              <span class="contact-label">YouTube Channel</span>
+              <a href="https://youtube.com/@setyvideosmixinglabdineshs3878?si=DhHKeX0A5Cn2NvAr" target="_blank" class="contact-val-link">@setyvideosmixinglab...</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Address Box -->
+        <div class="contact-item-box" style="margin-bottom: 2rem;">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <span class="contact-label">STUDIO LOCATION & ADDRESS</span>
+            <address style="font-family: var(--font-serif); font-size: 1.2rem; font-style: normal; color: var(--text-light);">
+              Krishnapuri, Pithoragarh, Uttarakhand - 262501
+            </address>
+          </div>
+        </div>
+
+        <div class="contact-buttons-wrap">
+          <a href="tel:+919412478853" class="btn-gold">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>CALL STUDIO DIRECT</span>
+          </a>
+
+          <a href="https://wa.me/919412478853?text=Hello%20Sety%20Videos%2C%20I%20would%20like%20to%20book%20wedding%20photography%20packages." target="_blank" class="btn-whatsapp">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            <span>CHAT ON WHATSAPP</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER (DARK ELEGANT)
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#home" class="brand-logo" style="margin-bottom: 0.75rem;">
+            <img src="images/gallery/logo/logos.png" alt="SETY VIDEOS AND MIXING LAB Logo" style="height: 44px;" onError="this.style.display='none'">
+            <div class="brand-text">
+              <span class="footer-brand-title">SETY</span>
+              <span class="footer-brand-sub">VIDEOS & MIXING LAB</span>
+            </div>
+          </a>
+          <p class="footer-desc">SETY VIDEOS AND MIXING LAB — Professional wedding photography, traditional videography, cinematic films, candid moments, drone coverage, teasers & luxury albums.</p>
+          
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/sety_videos_dinesh_sety/" target="_blank" class="social-icon-btn" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="https://facebook.com/SetyVideos" target="_blank" class="social-icon-btn" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://youtube.com/@setyvideosmixinglabdineshs3878?si=DhHKeX0A5Cn2NvAr" target="_blank" class="social-icon-btn" aria-label="YouTube">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.56 49.56 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><polygon points="10 15 15 12 10 9 10 15"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Core Services</h4>
+          <ul class="footer-links-list">
+            <li>Traditional Photography</li>
+            <li>Traditional Videography</li>
+            <li>Cinematic Wedding Films</li>
+            <li>Candid Photography</li>
+            <li>Drone Aerial Shoots</li>
+            <li>Wedding Albums (14x40)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Studio Desk</h4>
+          <ul class="footer-links-list">
+            <li style="color: var(--text-light); font-weight: 600; font-family: var(--font-serif); font-size: 1.1rem;">+91 94124 78853</li>
+            <li style="color: var(--gold);">IG: @sety_videos_dinesh_sety</li>
+            <li>setydinesh@gmail.com</li>
+            <li style="color: rgba(236,231,222,0.6);">Krishnapuri, Pithoragarh, Uttarakhand - 262501</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 SETY VIDEOS AND MIXING LAB. All Rights Reserved.</p>
+        <button class="btn-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑ Back to Top</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       LIGHTBOX OVERLAY MODAL
+       ========================================================================== -->
+  <div id="lightbox-overlay" class="lightbox-overlay">
+    <button id="lightbox-close" class="lightbox-close-btn" aria-label="Close Lightbox">✕</button>
+    <button id="lightbox-prev" class="lightbox-nav-btn lightbox-prev" aria-label="Previous Image">‹</button>
+    <button id="lightbox-next" class="lightbox-nav-btn lightbox-next" aria-label="Next Image">›</button>
     
-    <!-- Primary Meta Tags -->
-    <title>SETY VIDEOS AND MIXING LAB | Premium Photography & Videography</title>
-    <meta name="title" content="SETY VIDEOS AND MIXING LAB | Premium Photography & Videography" />
-    <meta name="description" content="SETY VIDEOS AND MIXING LAB — Professional wedding photography, traditional videography, cinematic films, candid moments, drone coverage, teasers, reels & luxury wedding albums." />
-    <meta name="keywords" content="photography, videography, cinematic wedding film, candid photography, drone shoots, wedding albums, Sety Videos, Sety Mixing Lab, event coverage, rate list" />
-    <meta name="author" content="SETY VIDEOS AND MIXING LAB" />
+    <div class="lightbox-content-box">
+      <img id="lightbox-img" class="lightbox-img-frame" src="" alt="">
+      <div class="lightbox-caption-box">
+        <span id="lightbox-cat" class="lightbox-cat"></span>
+        <h3 id="lightbox-title" class="lightbox-title"></h3>
+        <p id="lightbox-desc" class="lightbox-desc"></p>
+      </div>
+    </div>
+  </div>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://setyvideos.com/" />
-    <meta property="og:title" content="SETY VIDEOS AND MIXING LAB | Premium Photography & Videography" />
-    <meta property="og:description" content="Capturing moments, creating memories. Professional wedding photography, cinematic films, candid shots & complete event coverage." />
-    <meta property="og:image" content="./images/hero.jpg" />
+  <!-- ==========================================================================
+       PACKAGE COMPARE MODAL
+       ========================================================================== -->
+  <div id="compare-modal-overlay" class="compare-modal-overlay">
+    <div class="compare-modal-card">
+      <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--bg-light-secondary); padding-bottom: 1rem;">
+        <div>
+          <h3 style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 400;">COMPARE ALL PACKAGES</h3>
+          <p style="font-size: 0.75rem; color: var(--text-muted-dark);">Side-by-side rate sheet comparison matrix</p>
+        </div>
+        <button id="compare-close-btn" style="font-size: 1.25rem; cursor: pointer; padding: 0.5rem;">✕</button>
+      </div>
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="SETY VIDEOS AND MIXING LAB | Premium Photography & Videography" />
-    <meta property="twitter:description" content="Capturing moments, creating memories. Professional wedding photography, cinematic films, candid shots & complete event coverage." />
-    <meta property="twitter:image" content="./images/hero.jpg" />
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Feature / Specs</th>
+              <th>Pkg 01 (₹30k)</th>
+              <th>Pkg 02 (₹40k)</th>
+              <th>Pkg 03 (₹50k)</th>
+              <th>Special (₹60-70k)</th>
+              <th>Pkg 05 (₹80-90k)</th>
+              <th>Pkg 06 (₹1.2L)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Traditional Videography</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+            <tr><td>Traditional Photography</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+            <tr><td>Pendrive Delivery</td><td>32 GB</td><td>32 GB</td><td>32 GB</td><td>32 GB</td><td>32/64 GB</td><td>32/64 GB</td></tr>
+            <tr><td>Album Specs</td><td>12x36 Loaded</td><td>14x40 Loaded</td><td>14x40 Loaded</td><td>14x40 Loaded</td><td>14x40 Loaded</td><td>14x40 Luxury</td></tr>
+            <tr><td>Box Finishing</td><td>Sparkle Cover</td><td>3D / Premium Box</td><td>Premium Box</td><td>Special Box</td><td>3D Box</td><td>3D Box & Mounts</td></tr>
+            <tr><td>Photo Frames</td><td>1 Frame (12x18)</td><td>2 Frames (12x18)</td><td>2 Frames (12x18)</td><td>2 Frames (12x18)</td><td>2 Frames + 2 Wall</td><td>Custom Frames</td></tr>
+            <tr><td>Cinematic Video</td><td>—</td><td>—</td><td>✓</td><td>—</td><td>✓</td><td>✓ Gimbal</td></tr>
+            <tr><td>Reels & Teasers</td><td>—</td><td>Reels</td><td>Reels & Teaser</td><td>Reels & Teaser</td><td>Reels & Teaser</td><td>Reels & Teaser</td></tr>
+            <tr><td>Drone Shoot</td><td>—</td><td>✓</td><td>—</td><td>—</td><td>✓</td><td>✓</td></tr>
+            <tr><td>Candid Photography</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✓</td><td>✓</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-    <!-- Google Fonts: Cormorant Garamond (Serif Display) & Plus Jakarta Sans (Body) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body class="bg-[#0B0B0B] text-[#F5F1EA] antialiased selection:bg-[#C9A96E] selection:text-[#0B0B0B] overflow-x-hidden">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+      <div style="display: flex; justify-content: flex-end; padding-top: 0.75rem; border-top: 1px solid var(--bg-light-secondary);">
+        <a href="tel:+919412478853" class="btn-gold" style="padding: 0.6rem 1.5rem; font-size: 0.7rem;">Call Studio to Book</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript System -->
+  <script src="script.js"></script>
+</body>
 </html>
