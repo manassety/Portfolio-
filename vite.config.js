@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/Portfolio-/', // Exact GitHub Pages base path for repo manassety/Portfolio-
+  base: '/Portfolio-/', // GitHub Pages repository path
   build: {
     outDir: 'dist',
     sourcemap: false,
@@ -13,7 +13,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom', 'lucide-react'],
+          vendor: ['react', 'react-dom', 'framer-motion', 'gsap', 'lucide-react'],
         },
       },
     },
