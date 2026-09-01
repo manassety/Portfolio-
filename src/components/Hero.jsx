@@ -3,7 +3,7 @@ import { contactConfig } from '../config/contact';
 import { gsap } from '../utils/gsapUtils';
 import { Sparkles, Film } from 'lucide-react';
 
-export default function Hero({ onOpenEnquiry }) {
+export default function Hero() {
   const logoRef = useRef(null);
   const headingRef = useRef(null);
   const subRef = useRef(null);

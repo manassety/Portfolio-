@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { packagesData } from '../data/packages';
+import { contactConfig } from '../config/contact';
 import PackageModal from './PackageModal';
 import PackageCompareModal from './PackageCompareModal';
 import { initScrollReveals } from '../utils/gsapUtils';
-import { Check, Sparkles, SlidersHorizontal, ArrowRight } from 'lucide-react';
+import { Check, Sparkles, SlidersHorizontal, ArrowRight, Phone } from 'lucide-react';
 
-export default function Packages({ onOpenEnquiry }) {
+export default function Packages() {
   const [selectedPkg, setSelectedPkg] = useState(null);
   const [compareModalOpen, setCompareModalOpen] = useState(false);
   const sectionRef = useRef(null);
@@ -134,16 +135,17 @@ export default function Packages({ onOpenEnquiry }) {
                     <ArrowRight size={14} />
                   </button>
 
-                  <button
-                    onClick={() => onOpenEnquiry(pkg)}
-                    className={`w-full py-3.5 rounded-xl text-xs uppercase tracking-widest font-semibold transition-all duration-300 shadow-md ${
+                  <a
+                    href={`tel:${contactConfig.phone.replace(/[^0-9+]/g, '')}`}
+                    className={`w-full py-3.5 rounded-xl text-xs uppercase tracking-widest font-semibold transition-all duration-300 shadow-md flex items-center justify-center space-x-2 ${
                       isPopular
                         ? 'bg-[#B08A45] text-white hover:bg-[#8F6E33]'
                         : 'bg-[#171717] text-white hover:bg-[#B08A45]'
                     }`}
                   >
-                    Enquire Package
-                  </button>
+                    <Phone size={14} />
+                    <span>Call Studio to Book</span>
+                  </a>
                 </div>
               </div>
             );
@@ -156,14 +158,12 @@ export default function Packages({ onOpenEnquiry }) {
         isOpen={selectedPkg !== null}
         pkg={selectedPkg}
         onClose={() => setSelectedPkg(null)}
-        onSelectEnquiry={(pkg) => onOpenEnquiry(pkg)}
       />
 
       {/* Package Compare Modal */}
       <PackageCompareModal
         isOpen={compareModalOpen}
         onClose={() => setCompareModalOpen(false)}
-        onSelectEnquiry={(pkg) => onOpenEnquiry(pkg)}
       />
     </section>
   );

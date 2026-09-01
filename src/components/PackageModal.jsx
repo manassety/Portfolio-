@@ -1,7 +1,8 @@
 import React from 'react';
-import { X, Check, BookOpen, HardDrive, Sparkles } from 'lucide-react';
+import { X, Check, BookOpen, HardDrive, Sparkles, Phone } from 'lucide-react';
+import { contactConfig } from '../config/contact';
 
-export default function PackageModal({ isOpen, pkg, onClose, onSelectEnquiry }) {
+export default function PackageModal({ isOpen, pkg, onClose }) {
   if (!isOpen || !pkg) return null;
 
   return (
@@ -13,54 +14,54 @@ export default function PackageModal({ isOpen, pkg, onClose, onSelectEnquiry }) 
       />
 
       {/* Modal Content */}
-      <div className="relative z-10 max-w-2xl w-full glass-panel-gold rounded-3xl p-6 sm:p-8 my-8 shadow-2xl border border-[#C9A96E]/40 animate-fade-in">
+      <div className="relative z-10 max-w-2xl w-full bg-white rounded-3xl p-6 sm:p-8 my-8 shadow-2xl border border-[#B08A45]/30 text-[#171717] animate-fade-in">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 p-2 rounded-full glass-panel border border-white/20 text-[#F5F1EA] hover:text-[#C9A96E] transition-all"
+          className="absolute top-6 right-6 p-2 rounded-full bg-[#ECE7DE] text-[#171717] hover:text-[#B08A45] transition-all"
           aria-label="Close Package Details"
         >
           <X size={20} />
         </button>
 
         {/* Package Header */}
-        <div className="mb-6 border-b border-white/10 pb-6 pr-8">
+        <div className="mb-6 border-b border-[#ECE7DE] pb-6 pr-8">
           <div className="flex items-center space-x-3 mb-2">
-            <span className="text-xs font-mono font-bold text-[#0B0B0B] bg-[#C9A96E] px-3 py-1 rounded-full uppercase tracking-wider">
+            <span className="text-xs font-mono font-bold text-white bg-[#B08A45] px-3 py-1 rounded-full uppercase tracking-wider">
               Package {pkg.number}
             </span>
             {pkg.badge && (
-              <span className="text-xs uppercase tracking-widest text-[#C9A96E] font-medium">
+              <span className="text-xs uppercase tracking-widest text-[#B08A45] font-semibold">
                 {pkg.badge}
               </span>
             )}
           </div>
 
-          <h3 className="font-serif-display text-3xl sm:text-4xl font-normal text-[#F5F1EA]">
+          <h3 className="font-serif-display text-3xl sm:text-4xl font-normal text-[#171717]">
             {pkg.name}
           </h3>
-          <p className="text-xs sm:text-sm text-[#A8A29A] mt-1 font-light">
+          <p className="text-xs sm:text-sm text-[#625D55] mt-1 font-light">
             {pkg.tagline}
           </p>
 
           <div className="mt-4 flex items-baseline space-x-2">
-            <span className="font-serif-display text-4xl font-semibold text-[#C9A96E]">
+            <span className="font-serif-display text-4xl font-semibold text-[#B08A45]">
               {pkg.price}
             </span>
-            <span className="text-xs text-[#A8A29A]">All Taxes & Data Delivery Included</span>
+            <span className="text-xs text-[#625D55]">All Taxes & Data Delivery Included</span>
           </div>
         </div>
 
         {/* Key Deliverables Summary */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
           {pkg.deliverables?.album && (
-            <div className="glass-panel p-3.5 rounded-xl border border-white/5 flex items-start space-x-3">
-              <BookOpen size={18} className="text-[#C9A96E] shrink-0 mt-0.5" />
+            <div className="bg-[#ECE7DE] p-3.5 rounded-xl border border-[#B08A45]/20 flex items-start space-x-3">
+              <BookOpen size={18} className="text-[#B08A45] shrink-0 mt-0.5" />
               <div>
-                <span className="text-[10px] uppercase tracking-wider text-[#A8A29A] font-semibold block">
+                <span className="text-[10px] uppercase tracking-wider text-[#625D55] font-semibold block">
                   Album & Finishing
                 </span>
-                <span className="text-xs text-[#F5F1EA] font-medium">
+                <span className="text-xs text-[#171717] font-medium">
                   {pkg.deliverables.album}
                 </span>
               </div>
@@ -68,13 +69,13 @@ export default function PackageModal({ isOpen, pkg, onClose, onSelectEnquiry }) 
           )}
 
           {pkg.deliverables?.storage && (
-            <div className="glass-panel p-3.5 rounded-xl border border-white/5 flex items-start space-x-3">
-              <HardDrive size={18} className="text-[#C9A96E] shrink-0 mt-0.5" />
+            <div className="bg-[#ECE7DE] p-3.5 rounded-xl border border-[#B08A45]/20 flex items-start space-x-3">
+              <HardDrive size={18} className="text-[#B08A45] shrink-0 mt-0.5" />
               <div>
-                <span className="text-[10px] uppercase tracking-wider text-[#A8A29A] font-semibold block">
+                <span className="text-[10px] uppercase tracking-wider text-[#625D55] font-semibold block">
                   Storage & Backup
                 </span>
-                <span className="text-xs text-[#F5F1EA] font-medium">
+                <span className="text-xs text-[#171717] font-medium">
                   {pkg.deliverables.storage}
                 </span>
               </div>
@@ -84,15 +85,15 @@ export default function PackageModal({ isOpen, pkg, onClose, onSelectEnquiry }) 
 
         {/* Detailed Features List */}
         <div className="mb-8">
-          <h4 className="text-xs uppercase tracking-widest text-[#C9A96E] font-semibold mb-3 flex items-center space-x-2">
+          <h4 className="text-xs uppercase tracking-widest text-[#B08A45] font-semibold mb-3 flex items-center space-x-2">
             <Sparkles size={14} />
             <span>Full Services & Inclusions</span>
           </h4>
 
           <ul className="space-y-2.5">
             {pkg.features.map((feat, i) => (
-              <li key={i} className="flex items-start space-x-3 text-xs sm:text-sm text-[#F5F1EA]/90">
-                <div className="p-1 rounded-full bg-[#C9A96E]/20 text-[#C9A96E] shrink-0 mt-0.5">
+              <li key={i} className="flex items-start space-x-3 text-xs sm:text-sm text-[#171717]">
+                <div className="p-1 rounded-full bg-[#B08A45]/10 text-[#B08A45] shrink-0 mt-0.5">
                   <Check size={12} />
                 </div>
                 <span>{feat}</span>
@@ -102,19 +103,17 @@ export default function PackageModal({ isOpen, pkg, onClose, onSelectEnquiry }) 
         </div>
 
         {/* Actions */}
-        <div className="flex flex-col sm:flex-row items-center gap-3 pt-4 border-t border-white/10">
-          <button
-            onClick={() => {
-              onClose();
-              onSelectEnquiry(pkg);
-            }}
-            className="w-full bg-[#C9A96E] text-[#0B0B0B] font-semibold uppercase tracking-widest text-xs py-4 rounded-xl shadow-[0_0_25px_rgba(201,169,110,0.3)] hover:bg-[#DBC087] transition-all"
+        <div className="flex flex-col sm:flex-row items-center gap-3 pt-4 border-t border-[#ECE7DE]">
+          <a
+            href={`tel:${contactConfig.phone.replace(/[^0-9+]/g, '')}`}
+            className="w-full bg-[#B08A45] text-white font-semibold uppercase tracking-widest text-xs py-4 rounded-xl shadow-md hover:bg-[#8F6E33] transition-all flex items-center justify-center space-x-2"
           >
-            Book / Enquire Package
-          </button>
+            <Phone size={14} />
+            <span>Call Studio {contactConfig.phone}</span>
+          </a>
           <button
             onClick={onClose}
-            className="w-full sm:w-auto px-6 py-4 glass-panel text-xs text-[#A8A29A] hover:text-[#F5F1EA] rounded-xl"
+            className="w-full sm:w-auto px-6 py-4 bg-[#ECE7DE] text-xs text-[#625D55] hover:text-[#171717] rounded-xl font-medium"
           >
             Close
           </button>

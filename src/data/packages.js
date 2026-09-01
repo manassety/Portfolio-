@@ -93,7 +93,7 @@ export const packagesData = [
     number: "04",
     name: "Gimbal & Drone Custom Package",
     tagline: "Tailored cinematic gimbal video movement and aerial drone photography for large events.",
-    price: "Price on Enquiry",
+    price: "Custom Pricing",
     priceNumber: null,
     isPopular: false,
     badge: "Customizable",

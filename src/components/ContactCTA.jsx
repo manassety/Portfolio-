@@ -3,7 +3,7 @@ import { contactConfig } from '../config/contact';
 import { initScrollReveals } from '../utils/gsapUtils';
 import { Phone, MessageSquare, Calendar, Sparkles, MapPin, Instagram, Youtube, Facebook, Clock } from 'lucide-react';
 
-export default function ContactCTA({ onOpenEnquiry }) {
+export default function ContactCTA() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export default function ContactCTA({ onOpenEnquiry }) {
 
   const handleWhatsAppClick = () => {
     const cleanNum = contactConfig.whatsapp.replace(/[^0-9]/g, '');
-    window.open(`https://wa.me/${cleanNum}?text=Hello%20Sety%20Videos%2C%20I%20would%20like%20to%20enquire%20about%20wedding%20photography%20packages.`, '_blank');
+    window.open(`https://wa.me/${cleanNum}?text=Hello%20Sety%20Videos%2C%20I%20would%20like%20to%20book%20wedding%20photography%20packages.`, '_blank');
   };
 
   return (
@@ -147,11 +147,11 @@ export default function ContactCTA({ onOpenEnquiry }) {
           {/* Quick Interactive Actions */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-xl mx-auto mb-10">
             <button
-              onClick={() => onOpenEnquiry()}
+              onClick={handleCallClick}
               className="w-full sm:w-auto px-8 py-4 bg-[#B08A45] text-white font-semibold text-xs uppercase tracking-[0.2em] rounded-full hover:bg-[#8F6E33] transition-all shadow-[0_0_25px_rgba(176,138,69,0.3)] flex items-center justify-center space-x-2"
             >
-              <Calendar size={15} />
-              <span>BOOK EVENT DATES</span>
+              <Phone size={15} />
+              <span>CALL STUDIO DIRECT</span>
             </button>
 
             <button

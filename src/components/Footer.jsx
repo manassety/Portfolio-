@@ -1,14 +1,14 @@
 import React from 'react';
 import { contactConfig } from '../config/contact';
-import { Instagram, Facebook, Youtube, Heart, ArrowUp } from 'lucide-react';
+import { Instagram, Facebook, Youtube, Heart } from 'lucide-react';
 
-export default function Footer({ onOpenEnquiry }) {
+export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <footer className="bg-[#080808] border-t border-white/10 text-[#A8A29A] relative overflow-hidden">
+    <footer className="bg-[#171717] border-t border-white/10 text-[#ECE7DE]/80 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
           {/* Brand Column (2 Spans on desktop) */}
@@ -26,12 +26,12 @@ export default function Footer({ onOpenEnquiry }) {
                 <span className="font-serif-display text-2xl sm:text-3xl font-bold tracking-wider text-[#F5F1EA] block">
                   SETY
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] font-semibold block">
+                <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-[#B08A45] font-semibold block">
                   VIDEOS & MIXING LAB
                 </span>
               </div>
             </a>
-            <p className="text-xs sm:text-sm text-[#A8A29A] font-light max-w-sm leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#ECE7DE]/80 font-light max-w-sm leading-relaxed">
               {contactConfig.shortAbout}
             </p>
             <div className="flex items-center space-x-3 pt-2">
@@ -40,7 +40,7 @@ export default function Footer({ onOpenEnquiry }) {
                   href={contactConfig.socials.instagram}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2.5 rounded-full glass-panel text-[#F5F1EA] hover:text-[#C9A96E] hover:border-[#C9A96E] transition-colors"
+                  className="p-2.5 rounded-full glass-panel-dark text-[#F5F1EA] hover:text-[#B08A45] hover:border-[#B08A45] transition-colors"
                   aria-label="Instagram Page"
                 >
                   <Instagram size={16} />
@@ -51,7 +51,7 @@ export default function Footer({ onOpenEnquiry }) {
                   href={contactConfig.socials.facebook}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2.5 rounded-full glass-panel text-[#F5F1EA] hover:text-[#C9A96E] hover:border-[#C9A96E] transition-colors"
+                  className="p-2.5 rounded-full glass-panel-dark text-[#F5F1EA] hover:text-[#B08A45] hover:border-[#B08A45] transition-colors"
                   aria-label="Facebook Page"
                 >
                   <Facebook size={16} />
@@ -62,7 +62,7 @@ export default function Footer({ onOpenEnquiry }) {
                   href={contactConfig.socials.youtube}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2.5 rounded-full glass-panel text-[#F5F1EA] hover:text-[#C9A96E] hover:border-[#C9A96E] transition-colors"
+                  className="p-2.5 rounded-full glass-panel-dark text-[#F5F1EA] hover:text-[#B08A45] hover:border-[#B08A45] transition-colors"
                   aria-label="YouTube Channel"
                 >
                   <Youtube size={16} />
@@ -81,7 +81,7 @@ export default function Footer({ onOpenEnquiry }) {
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase()}`}
-                    className="hover:text-[#C9A96E] transition-colors"
+                    className="hover:text-[#B08A45] transition-colors"
                   >
                     {item}
                   </a>
@@ -112,35 +112,34 @@ export default function Footer({ onOpenEnquiry }) {
             </h4>
             <ul className="space-y-2.5 text-xs">
               <li className="text-[#F5F1EA] font-medium font-serif-display text-base">{contactConfig.phone}</li>
-              <li className="text-[#C9A96E]">IG: {contactConfig.instagramHandle}</li>
+              <li className="text-[#B08A45]">IG: {contactConfig.instagramHandle}</li>
               <li>{contactConfig.email}</li>
-              <li className="text-[#A8A29A]/80">{contactConfig.address}</li>
+              <li className="text-[#ECE7DE]/70">{contactConfig.address}</li>
               <li className="pt-2">
-                <button
-                  onClick={onOpenEnquiry}
-                  className="text-xs uppercase tracking-wider text-[#C9A96E] underline hover:text-[#F5F1EA] transition-colors"
+                <a
+                  href={`tel:${contactConfig.phone.replace(/[^0-9+]/g, '')}`}
+                  className="text-xs uppercase tracking-wider text-[#B08A45] underline hover:text-[#F5F1EA] transition-colors font-semibold"
                 >
-                  Book Event Now &rarr;
-                </button>
+                  Call Studio Direct &rarr;
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Copyright Row */}
-        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-[#A8A29A] gap-4">
+        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-[#ECE7DE]/70 gap-4">
           <p>© 2026 Sety Videos and Mixing Lab. All Rights Reserved.</p>
           <div className="flex items-center space-x-4">
             <span className="flex items-center space-x-1">
               <span>Crafted for Wedding Memories</span>
-              <Heart size={12} className="text-[#C9A96E] fill-[#C9A96E]" />
+              <Heart size={12} className="text-[#B08A45] fill-[#B08A45]" />
             </span>
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-full glass-panel text-[#F5F1EA] hover:text-[#C9A96E] transition-colors"
-              aria-label="Scroll Back to Top"
+              className="p-2 rounded-full glass-panel-dark text-[#F5F1EA] hover:text-[#B08A45] transition-colors"
             >
-              <ArrowUp size={14} />
+              ↑ Top
             </button>
           </div>
         </div>
