@@ -1,33 +1,8 @@
-import React, { useRef, useEffect } from 'react';
-import { animateHeroEntrance } from '../utils/gsapUtils';
+import React from 'react';
 import { contactConfig } from '../config/contact';
 import { ChevronDown, Sparkles, Film } from 'lucide-react';
 
 export default function Hero({ onOpenEnquiry }) {
-  const heroRef = useRef(null);
-  const bgRef = useRef(null);
-  const businessRef = useRef(null);
-  const mainHeadingRef = useRef(null);
-  const subtitleRef = useRef(null);
-  const buttonsRef = useRef(null);
-  const scrollIndicatorRef = useRef(null);
-
-  useEffect(() => {
-    const targets = {
-      bgRef,
-      businessRef,
-      mainHeadingRef,
-      subtitleRef,
-      buttonsRef,
-      scrollIndicatorRef,
-    };
-    const timeline = animateHeroEntrance(targets);
-
-    return () => {
-      if (timeline) timeline.kill();
-    };
-  }, []);
-
   const handleScrollTo = (id) => {
     const element = document.querySelector(id);
     if (element) {
@@ -38,18 +13,15 @@ export default function Hero({ onOpenEnquiry }) {
   return (
     <section
       id="home"
-      ref={heroRef}
       className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#0B0B0B] pt-24 pb-16 px-4 sm:px-6 lg:px-8"
     >
       {/* Background Image Container with Cinematic Overlay */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
-          ref={bgRef}
           src="./images/hero.jpg"
           alt="SETY VIDEOS AND MIXING LAB Wedding Cinematography"
-          className="w-full h-full object-cover object-center transform scale-[1.08] filter brightness-[0.45] contrast-[1.08]"
+          className="w-full h-full object-cover object-center transform scale-[1.04] filter brightness-[0.45] contrast-[1.08]"
           onError={(e) => {
-            // Elegant dark fallback if image replacement occurs
             e.target.style.display = 'none';
           }}
         />
@@ -61,19 +33,19 @@ export default function Hero({ onOpenEnquiry }) {
       {/* Hero Content */}
       <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center justify-center my-auto">
         {/* Eyebrow & Business Badge with Logo */}
-        <div ref={businessRef} className="flex flex-col items-center mb-6">
+        <div className="flex flex-col items-center mb-6">
           {/* Studio Brand Logo */}
           <img
             src="./images/gallery/logo/logos.png"
             alt="SETY VIDEOS AND MIXING LAB Logo"
-            className="h-20 sm:h-28 w-auto object-contain filter drop-shadow-[0_10px_25px_rgba(201,169,110,0.3)] mb-4 animate-fade-in"
+            className="h-20 sm:h-28 w-auto object-contain filter drop-shadow-[0_10px_25px_rgba(201,169,110,0.3)] mb-4"
             onError={(e) => {
               e.target.style.display = 'none';
             }}
           />
 
           <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-panel border border-[#C9A96E]/30 mb-3">
-            <Sparkles size={13} className="text-[#C9A96E] animate-pulse" />
+            <Sparkles size={13} className="text-[#C9A96E]" />
             <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] font-medium text-[#C9A96E]">
               CAPTURING MOMENTS • CREATING MEMORIES
             </span>
@@ -84,29 +56,23 @@ export default function Hero({ onOpenEnquiry }) {
           </h2>
         </div>
 
-        {/* Main Heading Reveal */}
-        <div ref={mainHeadingRef} className="overflow-hidden mb-6 px-2">
-          <h1 className="hero-heading-line font-serif-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal tracking-tight text-[#F5F1EA] leading-[1.08]">
+        {/* Main Heading */}
+        <div className="overflow-hidden mb-6 px-2">
+          <h1 className="font-serif-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal tracking-tight text-[#F5F1EA] leading-[1.08]">
             Every Moment Deserves
           </h1>
-          <h1 className="hero-heading-line font-serif-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal tracking-tight gold-gradient-text leading-[1.08] mt-1 sm:mt-2">
+          <h1 className="font-serif-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal tracking-tight gold-gradient-text leading-[1.08] mt-1 sm:mt-2">
             To Be Remembered.
           </h1>
         </div>
 
         {/* Subtitle */}
-        <p
-          ref={subtitleRef}
-          className="max-w-2xl text-xs sm:text-sm md:text-base text-[#A8A29A] uppercase tracking-[0.2em] font-light leading-relaxed mb-10 px-4"
-        >
+        <p className="max-w-2xl text-xs sm:text-sm md:text-base text-[#A8A29A] uppercase tracking-[0.2em] font-light leading-relaxed mb-10 px-4">
           Traditional Photography • Cinematic Films • Candid Moments • Drone Coverage
         </p>
 
         {/* Call to Action Buttons */}
-        <div
-          ref={buttonsRef}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-md px-4"
-        >
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-md px-4">
           <button
             onClick={() => handleScrollTo('#portfolio')}
             className="w-full sm:w-auto px-8 py-4 bg-[#C9A96E] text-[#0B0B0B] font-semibold text-xs uppercase tracking-[0.2em] rounded-full hover:bg-[#DBC087] transition-all duration-300 transform hover:-translate-y-0.5 shadow-[0_0_25px_rgba(201,169,110,0.3)] flex items-center justify-center space-x-2"
@@ -126,7 +92,6 @@ export default function Hero({ onOpenEnquiry }) {
 
       {/* Scroll Down Indicator */}
       <div
-        ref={scrollIndicatorRef}
         className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center space-y-2 cursor-pointer group"
         onClick={() => handleScrollTo('#services')}
       >

@@ -1,65 +1,51 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
 import { packagesData } from '../data/packages';
 import PackageModal from './PackageModal';
 import PackageCompareModal from './PackageCompareModal';
-import { initScrollReveals } from '../utils/gsapUtils';
 import { Check, Sparkles, SlidersHorizontal, ArrowRight } from 'lucide-react';
 
 export default function Packages({ onOpenEnquiry }) {
   const [selectedPkg, setSelectedPkg] = useState(null);
   const [compareModalOpen, setCompareModalOpen] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    initScrollReveals(sectionRef.current);
-  }, []);
 
   return (
-    <section id="packages" ref={sectionRef} className="py-24 sm:py-32 bg-[#0B0B0B] relative">
+    <section id="packages" className="py-24 sm:py-32 bg-[#0B0B0B] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div data-reveal="fade-up" className="inline-flex items-center space-x-2 text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#C9A96E] font-medium mb-3">
+          <div className="inline-flex items-center space-x-2 text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#C9A96E] font-medium mb-3">
             <Sparkles size={14} />
             <span>TRANSPARENT RATE LIST</span>
           </div>
 
-          <h2 data-reveal="fade-up" data-delay="0.1" className="font-serif-display text-3xl sm:text-5xl md:text-6xl font-normal text-[#F5F1EA] tracking-tight leading-tight mb-4">
+          <h2 className="font-serif-display text-3xl sm:text-5xl md:text-6xl font-normal text-[#F5F1EA] tracking-tight leading-tight mb-4">
             CHOOSE YOUR PACKAGE
           </h2>
 
-          <p data-reveal="fade-up" data-delay="0.2" className="text-sm sm:text-base text-[#A8A29A] font-light max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-[#A8A29A] font-light max-w-2xl mx-auto">
             Professional coverage tailored for your special moments. No hidden charges. All packages include raw data delivery via Google Drive.
           </p>
 
-          <div data-reveal="fade-up" data-delay="0.3" className="mt-6 flex justify-center">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+          <div className="mt-6 flex justify-center">
+            <button
               onClick={() => setCompareModalOpen(true)}
-              className="glass-panel-gold border border-[#C9A96E]/40 px-6 py-2.5 rounded-full text-xs uppercase tracking-[0.15em] text-[#C9A96E] hover:text-[#F5F1EA] flex items-center space-x-2 transition-all shadow-[0_0_20px_rgba(201,169,110,0.15)]"
+              className="glass-panel-gold border border-[#C9A96E]/40 px-6 py-2.5 rounded-full text-xs uppercase tracking-[0.15em] text-[#C9A96E] hover:text-[#F5F1EA] hover:scale-105 flex items-center space-x-2 transition-all duration-300 shadow-[0_0_20px_rgba(201,169,110,0.15)]"
             >
               <SlidersHorizontal size={14} />
               <span>Compare All Packages</span>
-            </motion.button>
+            </button>
           </div>
         </div>
 
-        {/* Packages Cards Grid with Framer Motion & GSAP */}
+        {/* Packages Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {packagesData.map((pkg, index) => {
+          {packagesData.map((pkg) => {
             const isPopular = pkg.isPopular;
 
             return (
-              <motion.div
+              <div
                 key={pkg.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.6, delay: (index % 3) * 0.12 }}
-                whileHover={{ y: -8, scale: 1.01 }}
-                className={`relative rounded-3xl p-8 flex flex-col justify-between transition-colors duration-500 ${
+                className={`relative rounded-3xl p-8 flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 ${
                   isPopular
                     ? 'glass-panel-gold gold-border-glow shadow-2xl'
                     : 'glass-panel border-white/10 hover:border-[#C9A96E]/40'
@@ -67,25 +53,19 @@ export default function Packages({ onOpenEnquiry }) {
               >
                 {/* Popular / Badge Tag */}
                 {pkg.badge && (
-                  <motion.div
-                    animate={{ scale: [1, 1.04, 1] }}
-                    transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
-                    className="absolute top-4 right-4 z-10 bg-[#C9A96E] text-[#0B0B0B] text-[10px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full shadow-lg"
-                  >
+                  <div className="absolute top-4 right-4 z-10 bg-[#C9A96E] text-[#0B0B0B] text-[10px] font-bold uppercase tracking-widest px-3.5 py-1 rounded-full shadow-lg">
                     {pkg.badge}
-                  </motion.div>
+                  </div>
                 )}
 
                 <div>
                   {/* Package Cover Image Banner */}
                   {pkg.coverImage && (
-                    <div className="w-full aspect-[3/2] rounded-2xl overflow-hidden mb-6 border border-white/10 relative">
-                      <motion.img
+                    <div className="w-full aspect-[3/2] rounded-2xl overflow-hidden mb-6 border border-white/10 relative group">
+                      <img
                         src={pkg.coverImage}
                         alt={pkg.name}
-                        whileHover={{ scale: 1.08 }}
-                        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                        className="w-full h-full object-cover object-[center_25%]"
+                        className="w-full h-full object-cover object-[center_25%] transform group-hover:scale-105 transition-transform duration-500"
                         onError={(e) => {
                           e.target.style.display = 'none';
                         }}
@@ -138,30 +118,26 @@ export default function Packages({ onOpenEnquiry }) {
 
                 {/* Bottom Buttons */}
                 <div className="space-y-3 pt-4 border-t border-white/5">
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                  <button
                     onClick={() => setSelectedPkg(pkg)}
-                    className="w-full py-3.5 glass-panel text-xs uppercase tracking-widest font-medium text-[#F5F1EA] hover:text-[#C9A96E] hover:border-[#C9A96E]/50 rounded-xl transition-all flex items-center justify-center space-x-2"
+                    className="w-full py-3.5 glass-panel text-xs uppercase tracking-widest font-medium text-[#F5F1EA] hover:text-[#C9A96E] hover:border-[#C9A96E]/50 rounded-xl transition-all duration-300 flex items-center justify-center space-x-2"
                   >
                     <span>View Full Details</span>
                     <ArrowRight size={14} />
-                  </motion.button>
+                  </button>
 
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                  <button
                     onClick={() => onOpenEnquiry(pkg)}
-                    className={`w-full py-3.5 rounded-xl text-xs uppercase tracking-widest font-semibold transition-all shadow-lg ${
+                    className={`w-full py-3.5 rounded-xl text-xs uppercase tracking-widest font-semibold transition-all duration-300 shadow-lg ${
                       isPopular
                         ? 'bg-[#C9A96E] text-[#0B0B0B] hover:bg-[#DBC087]'
                         : 'bg-white/10 text-[#F5F1EA] hover:bg-[#C9A96E] hover:text-[#0B0B0B]'
                     }`}
                   >
                     Enquire Package
-                  </motion.button>
+                  </button>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>

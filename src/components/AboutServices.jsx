@@ -1,6 +1,5 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { servicesData } from '../data/services';
-import { initScrollReveals } from '../utils/gsapUtils';
 import {
   Video,
   Camera,
@@ -30,14 +29,8 @@ const iconMap = {
 };
 
 export default function AboutServices() {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    initScrollReveals(sectionRef.current);
-  }, []);
-
   return (
-    <section id="services" ref={sectionRef} className="py-24 sm:py-32 bg-[#0B0B0B] relative overflow-hidden">
+    <section id="services" className="py-24 sm:py-32 bg-[#0B0B0B] relative overflow-hidden">
       {/* Background Decorative Accents */}
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#C9A96E]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-0 w-96 h-96 bg-[#C9A96E]/5 rounded-full blur-3xl pointer-events-none" />
@@ -45,29 +38,27 @@ export default function AboutServices() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Intro Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <div data-reveal="fade-up" className="inline-flex items-center space-x-2 text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#C9A96E] font-medium mb-3">
+          <div className="inline-flex items-center space-x-2 text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#C9A96E] font-medium mb-3">
             <Award size={14} />
             <span>OUR STUDIO EXPERTISE</span>
           </div>
 
-          <h2 data-reveal="fade-up" data-delay="0.1" className="font-serif-display text-3xl sm:text-5xl md:text-6xl font-normal text-[#F5F1EA] tracking-tight leading-tight mb-6">
+          <h2 className="font-serif-display text-3xl sm:text-5xl md:text-6xl font-normal text-[#F5F1EA] tracking-tight leading-tight mb-6">
             WE TURN MOMENTS INTO MEMORIES
           </h2>
 
-          <p data-reveal="fade-up" data-delay="0.2" className="text-sm sm:text-base text-[#A8A29A] font-light leading-relaxed">
+          <p className="text-sm sm:text-base text-[#A8A29A] font-light leading-relaxed">
             At <strong className="text-[#F5F1EA] font-medium">SETY VIDEOS AND MIXING LAB</strong>, we specialize in high-end wedding cinematography, traditional photography, and state-of-the-art post-production mixing. Every frame is crafted with artistic precision to celebrate your unique love story.
           </p>
         </div>
 
         {/* 10 Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {servicesData.map((service, index) => {
+          {servicesData.map((service) => {
             const IconComponent = iconMap[service.icon] || Camera;
             return (
               <div
                 key={service.id}
-                data-reveal="fade-up"
-                data-delay={(index % 3) * 0.1}
                 className="group relative glass-panel rounded-2xl p-8 hover:border-[#C9A96E]/50 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(201,169,110,0.1)] flex flex-col justify-between"
               >
                 <div>
@@ -100,17 +91,16 @@ export default function AboutServices() {
                   <p className="text-xs sm:text-sm text-[#A8A29A] font-light leading-relaxed mb-6">
                     {service.description}
                   </p>
-                </div>
 
-                {/* Subtle Card Footer Indicator */}
-                <div className="pt-4 border-t border-white/5 flex items-center justify-between text-[11px] text-[#A8A29A] group-hover:text-[#F5F1EA] transition-colors">
-                  <span className="flex items-center space-x-1.5">
-                    <CheckCircle2 size={12} className="text-[#C9A96E]" />
-                    <span>Included in Packages</span>
-                  </span>
-                  <span className="opacity-0 group-hover:opacity-100 transform translate-x-[-8px] group-hover:translate-x-0 transition-all duration-300 text-[#C9A96E]">
-                    &rarr;
-                  </span>
+                  {/* Highlights Bullet List */}
+                  <ul className="space-y-2 pt-4 border-t border-white/5">
+                    {service.highlights.map((h, hIdx) => (
+                      <li key={hIdx} className="flex items-center space-x-2 text-xs text-[#F5F1EA]/80">
+                        <CheckCircle2 size={13} className="text-[#C9A96E] shrink-0" />
+                        <span>{h}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             );

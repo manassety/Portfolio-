@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, MessageSquare } from 'lucide-react';
 import { contactConfig } from '../config/contact';
 
@@ -112,74 +111,63 @@ export default function Navbar({ onOpenEnquiry }) {
       </header>
 
       {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-[#0B0B0B]/98 backdrop-blur-2xl flex flex-col justify-between px-6 pt-28 pb-12 md:hidden"
-          >
-            <div className="flex flex-col space-y-6">
-              <span className="text-[10px] uppercase tracking-[0.3em] text-[#C9A96E] border-b border-white/10 pb-3 font-semibold">
-                Navigation Menu
-              </span>
-              {navLinks.map((link, idx) => (
-                <motion.a
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.08 * idx, duration: 0.3 }}
-                  className="font-serif-display text-3xl font-normal text-[#F5F1EA] hover:text-[#C9A96E] transition-colors flex items-center justify-between"
-                >
-                  <span>{link.name}</span>
-                  <span className="text-xs font-sans text-[#C9A96E]/50 font-mono">
-                    0{idx + 1}
-                  </span>
-                </motion.a>
-              ))}
-            </div>
-
-            <div className="flex flex-col space-y-4 pt-8 border-t border-white/10">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenEnquiry();
-                }}
-                className="w-full bg-[#C9A96E] text-[#0B0B0B] font-semibold uppercase tracking-widest text-xs py-4 rounded-lg shadow-lg active:scale-95 transition-transform"
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-40 bg-[#0B0B0B]/98 backdrop-blur-2xl flex flex-col justify-between px-6 pt-28 pb-12 md:hidden animate-fade-in">
+          <div className="flex flex-col space-y-6">
+            <span className="text-[10px] uppercase tracking-[0.3em] text-[#C9A96E] border-b border-white/10 pb-3 font-semibold">
+              Navigation Menu
+            </span>
+            {navLinks.map((link, idx) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="font-serif-display text-3xl font-normal text-[#F5F1EA] hover:text-[#C9A96E] transition-colors flex items-center justify-between"
               >
-                Enquire Now for Event
-              </button>
+                <span>{link.name}</span>
+                <span className="text-xs font-sans text-[#C9A96E]/50 font-mono">
+                  0{idx + 1}
+                </span>
+              </a>
+            ))}
+          </div>
 
-              <div className="flex items-center justify-around pt-2 text-[#A8A29A] text-xs">
-                {contactConfig.phone && (
-                  <a
-                    href={`tel:${contactConfig.phone}`}
-                    className="flex items-center space-x-2 hover:text-[#C9A96E]"
-                  >
-                    <Phone size={14} />
-                    <span>Call Us</span>
-                  </a>
-                )}
-                {contactConfig.whatsapp && (
-                  <a
-                    href={`https://wa.me/${contactConfig.whatsapp.replace(/[^0-9]/g, '')}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center space-x-2 hover:text-[#C9A96E]"
-                  >
-                    <MessageSquare size={14} />
-                    <span>WhatsApp</span>
-                  </a>
-                )}
-              </div>
+          <div className="flex flex-col space-y-4 pt-8 border-t border-white/10">
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenEnquiry();
+              }}
+              className="w-full bg-[#C9A96E] text-[#0B0B0B] font-semibold uppercase tracking-widest text-xs py-4 rounded-lg shadow-lg active:scale-95 transition-transform"
+            >
+              Enquire Now for Event
+            </button>
+
+            <div className="flex items-center justify-around pt-2 text-[#A8A29A] text-xs">
+              {contactConfig.phone && (
+                <a
+                  href={`tel:${contactConfig.phone}`}
+                  className="flex items-center space-x-2 hover:text-[#C9A96E]"
+                >
+                  <Phone size={14} />
+                  <span>Call Us</span>
+                </a>
+              )}
+              {contactConfig.whatsapp && (
+                <a
+                  href={`https://wa.me/${contactConfig.whatsapp.replace(/[^0-9]/g, '')}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center space-x-2 hover:text-[#C9A96E]"
+                >
+                  <MessageSquare size={14} />
+                  <span>WhatsApp</span>
+                </a>
+              )}
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </div>
+      )}
     </>
   );
 }

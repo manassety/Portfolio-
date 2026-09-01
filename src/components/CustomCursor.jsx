@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
 
 export default function CustomCursor() {
   const [position, setPosition] = useState({ x: -100, y: -100 });
@@ -7,7 +6,6 @@ export default function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Only run on desktop devices (non-touch)
     if (window.matchMedia('(pointer: coarse)').matches) return;
 
     const handleMouseMove = (e) => {
@@ -43,23 +41,17 @@ export default function CustomCursor() {
 
   return (
     <>
-      <motion.div
-        className="fixed top-0 left-0 w-3 h-3 bg-[#C9A96E] rounded-full pointer-events-none z-[9999] mix-blend-difference hidden md:block"
-        animate={{
-          x: position.x - 6,
-          y: position.y - 6,
-          scale: isPointer ? 2.5 : 1,
+      <div
+        className="fixed top-0 left-0 w-3 h-3 bg-[#C9A96E] rounded-full pointer-events-none z-[9999] mix-blend-difference hidden md:block transition-transform duration-75 ease-out"
+        style={{
+          transform: `translate3d(${position.x - 6}px, ${position.y - 6}px, 0) scale(${isPointer ? 2.5 : 1})`,
         }}
-        transition={{ type: 'spring', damping: 30, stiffness: 400, mass: 0.1 }}
       />
-      <motion.div
-        className="fixed top-0 left-0 w-8 h-8 border border-[#C9A96E]/40 rounded-full pointer-events-none z-[9998] hidden md:block"
-        animate={{
-          x: position.x - 16,
-          y: position.y - 16,
-          scale: isPointer ? 1.5 : 1,
+      <div
+        className="fixed top-0 left-0 w-8 h-8 border border-[#C9A96E]/40 rounded-full pointer-events-none z-[9998] hidden md:block transition-transform duration-150 ease-out"
+        style={{
+          transform: `translate3d(${position.x - 16}px, ${position.y - 16}px, 0) scale(${isPointer ? 1.5 : 1})`,
         }}
-        transition={{ type: 'spring', damping: 25, stiffness: 200, mass: 0.3 }}
       />
     </>
   );
