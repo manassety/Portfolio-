@@ -93,14 +93,16 @@ export default function AboutServices() {
                   </p>
 
                   {/* Highlights Bullet List */}
-                  <ul className="space-y-2 pt-4 border-t border-white/5">
-                    {service.highlights.map((h, hIdx) => (
-                      <li key={hIdx} className="flex items-center space-x-2 text-xs text-[#F5F1EA]/80">
-                        <CheckCircle2 size={13} className="text-[#C9A96E] shrink-0" />
-                        <span>{h}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {service.highlights && service.highlights.length > 0 && (
+                    <ul className="space-y-2 pt-4 border-t border-white/5">
+                      {service.highlights.map((h, hIdx) => (
+                        <li key={hIdx} className="flex items-center space-x-2 text-xs text-[#F5F1EA]/80">
+                          <CheckCircle2 size={13} className="text-[#C9A96E] shrink-0" />
+                          <span>{h}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </div>
             );
