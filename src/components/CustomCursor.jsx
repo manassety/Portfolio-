@@ -14,13 +14,15 @@ export default function CustomCursor() {
 
       const target = e.target;
       const isClickable =
-        target.tagName === 'BUTTON' ||
-        target.tagName === 'A' ||
-        target.closest('button') ||
-        target.closest('a') ||
-        target.classList.contains('clickable');
+        target &&
+        typeof target.closest === 'function' &&
+        (target.tagName === 'BUTTON' ||
+          target.tagName === 'A' ||
+          Boolean(target.closest('button')) ||
+          Boolean(target.closest('a')) ||
+          (target.classList && typeof target.classList.contains === 'function' && target.classList.contains('clickable')));
 
-      setIsPointer(isClickable);
+      setIsPointer(Boolean(isClickable));
     };
 
     const handleMouseLeave = () => setIsVisible(false);
