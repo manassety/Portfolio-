@@ -18,14 +18,14 @@ const STUDIO_CONFIG = {
   youtubeHandle: "@setyvideosmixinglabdineshs3878"
 };
 
-// Gallery Data Array for Lightbox Navigation
+// Complete Verified Gallery Items (14 Photos)
 const GALLERY_ITEMS = [
   {
     id: 1,
     title: "Royal Velvet Bride & Groom",
     category: "WEDDINGS",
     categoryLabel: "Weddings",
-    src: "images/gallery/wedding-photo/DSC_6225.JPG.jpeg",
+    src: "images/gallery/wedding-photo/DSC_6225.jpg",
     caption: "Breathtaking royal wedding portrait featuring rich maroon velvet embroidered attire and traditional jewelry."
   },
   {
@@ -33,7 +33,7 @@ const GALLERY_ITEMS = [
     title: "Traditional Red Bridal Grace",
     category: "WEDDINGS",
     categoryLabel: "Weddings",
-    src: "images/gallery/wedding-photo/DSC08475.JPG.jpeg",
+    src: "images/gallery/wedding-photo/DSC08475.jpg",
     caption: "Exquisite red lehenga bridal portrait capturing intricate matha patti, nath, and royal bridal jewelry."
   },
   {
@@ -41,7 +41,7 @@ const GALLERY_ITEMS = [
     title: "Velvet & Emerald Jewelry",
     category: "WEDDINGS",
     categoryLabel: "Weddings",
-    src: "images/gallery/wedding-photo/DSC08506.JPG.jpeg",
+    src: "images/gallery/wedding-photo/DSC08506.jpg",
     caption: "Elegant studio portrait highlighting detailed polki necklace, green emerald accents, and traditional veil."
   },
   {
@@ -49,48 +49,88 @@ const GALLERY_ITEMS = [
     title: "Traditional Stage Ceremony",
     category: "TRADITIONAL",
     categoryLabel: "Traditional",
-    src: "images/gallery/wedding-photo/DSC08911.JPG.jpeg",
+    src: "images/gallery/wedding-photo/DSC08911.jpg",
     caption: "High-definition stage lighting capture preserving sacred wedding rituals and family blessings."
   },
   {
     id: 5,
-    title: "Candid Couple Laugh",
+    title: "Candid Couple Smile",
     category: "CANDID",
     categoryLabel: "Candid Shots",
-    src: "images/gallery/candid-photo/DSC08842.JPG.jpeg",
-    caption: "Unscripted, genuine laughter shared between couple during the ceremony."
+    src: "images/gallery/candid-photo/DSC08472.jpg",
+    caption: "Heartfelt candid expression captured during golden hour ceremony moments."
   },
   {
     id: 6,
-    title: "Black & White Bridal Elegance",
+    title: "Candid Haldi Celebration",
+    category: "CANDID",
+    categoryLabel: "Candid Shots",
+    src: "images/gallery/candid-photo/DSC08510.jpg",
+    caption: "Joyous laughter and vibrant turmeric colors captured live during Haldi rituals."
+  },
+  {
+    id: 7,
+    title: "Gentle Bridal Glance",
+    category: "CANDID",
+    categoryLabel: "Candid Shots",
+    src: "images/gallery/candid-photo/DSC08522.jpg",
+    caption: "Subtle, unscripted glance showcasing genuine emotions and bridal elegance."
+  },
+  {
+    id: 8,
+    title: "Vibrant Wedding Laughter",
+    category: "CANDID",
+    categoryLabel: "Candid Shots",
+    src: "images/gallery/candid-photo/DSC08665.jpg",
+    caption: "Spontaneous laughter shared between bride, groom, and family."
+  },
+  {
+    id: 9,
+    title: "Intimate Couple Embrace",
+    category: "CANDID",
+    categoryLabel: "Candid Shots",
+    src: "images/gallery/candid-photo/DSC_6300.jpg",
+    caption: "Quiet, romantic moment recorded during post-ceremony photo shoot."
+  },
+  {
+    id: 10,
+    title: "Black & White Fine Art Portrait",
     category: "CINEMATIC",
     categoryLabel: "Cinematic Stills",
     src: "images/gallery/bw-portrait.jpeg",
     caption: "Timeless monochrome editorial bridal portrait emphasizing dramatic shadows and fine jewelry detail."
   },
   {
-    id: 7,
-    title: "Handcrafted Leather Wedding Album",
+    id: 11,
+    title: "Luxury Leather Embossed Album",
     category: "ALBUMS",
     categoryLabel: "Albums & Frames",
-    src: "images/gallery/photo-album/DSC08573.JPG.jpeg",
+    src: "images/gallery/photo-album/2c48ae672f49400795336ab8c6ef7fca.jpg",
     caption: "Handcrafted 14x40 velvet-embossed wedding album with gold foil title and non-tearable metallic pages."
   },
   {
-    id: 8,
-    title: "Royal Couple Mandap Portrait",
-    category: "WEDDINGS",
-    categoryLabel: "Weddings",
-    src: "images/gallery/wedding-photo/DSC08882.JPG.jpeg",
-    caption: "Traditional couple portrait under golden mandap decorations."
+    id: 12,
+    title: "Flush Mount 3D Box Presentation",
+    category: "ALBUMS",
+    categoryLabel: "Albums & Frames",
+    src: "images/gallery/photo-album/998d1c77abda4b769e15e00f135a349a.jpg",
+    caption: "Custom 3D acrylic presentation box crafted for lifelong wedding album preservation."
   },
   {
-    id: 9,
-    title: "Candid Haldi Expression",
-    category: "CANDID",
-    categoryLabel: "Candid Shots",
-    src: "images/gallery/candid-photo/DSC08865.JPG.jpeg",
-    caption: "Joyous candid moment captured during turmeric ritual celebrations."
+    id: 13,
+    title: "Royal Velvet Album Case",
+    category: "ALBUMS",
+    categoryLabel: "Albums & Frames",
+    src: "images/gallery/photo-album/f4b7cdcc1caa4906a8bd72669a08a0cb.jpg",
+    caption: "Rich royal velvet protective album case with engraved gold calligraphy."
+  },
+  {
+    id: 14,
+    title: "High-Gloss Metallic Page Spread",
+    category: "ALBUMS",
+    categoryLabel: "Albums & Frames",
+    src: "images/gallery/photo-album/f53be576a2184bbb87b738db61548043.jpg",
+    caption: "HD panoramic 14x40 spread layout with UV weather-proof coating."
   }
 ];
 
